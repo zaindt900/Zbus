@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ZBus</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#10233F">
+<link rel="icon" href="assets/icons/icon.svg">
+<link rel="apple-touch-icon" href="assets/icons/icon.svg">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="brand"><img src="assets/icons/icon.svg" alt="" width="32" height="32"><b>ZBus</b></div>
+  <nav>
+    <button data-view="home" aria-label="Home">🏠</button>
+    <button data-view="map" aria-label="Map">🗺️</button>
+    <button data-view="settings" aria-label="Settings">⚙️</button>
+  </nav>
+</header>
+<main>
+  <section id="home" class="view">
+    <h1 data-i="title"></h1>
+    <input id="q" type="search" autocomplete="off" data-ip="search">
+    <div id="results" class="list"></div>
+    <div id="gpsMsg" class="note" hidden></div>
+    <h2 data-i="nearby"></h2><div id="nearby" class="list"></div>
+    <h2 data-i="favLines"></h2><div id="favLines" class="chips"></div>
+    <h2 data-i="favStops"></h2><div id="favStops" class="list"></div>
+    <button class="big" data-view="map" data-i="openMap"></button>
+  </section>
+  <section id="map" class="view" hidden>
+    <div id="mapBox"></div>
+    <div id="liveMsg" class="note"></div>
+  </section>
+  <section id="settings" class="view" hidden>
+    <h2 data-i="language"></h2>
+    <div class="seg" id="langSeg"><button data-lang="tr">🇹🇷 Türkçe</button><button data-lang="en">🇬🇧 English</button><button data-lang="ar">🇸🇦 العربية</button></div>
+    <h2 data-i="theme"></h2>
+    <div class="seg" id="themeSeg"><button data-theme="light">☀️ <span data-i="light"></span></button><button data-theme="dark">🌙 <span data-i="dark"></span></button></div>
+    <p class="note" data-i="source"></p>
+  </section>
+</main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/favorites.js"></script>
+<script src="js/api.js"></script>
+<script src="js/gps.js"></script>
+<script src="js/map.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
